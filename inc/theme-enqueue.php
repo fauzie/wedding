@@ -43,8 +43,8 @@ add_action( 'wp_enqueue_scripts', 'wedding_js_scripts' );
 function wedding_admin_scripts( $hook )
 {	
 	if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
-		wp_enqueue_style( 'adm-font', '//fonts.googleapis.com/css?family=Lato:400,700,900|Pacifico' );
-		wp_enqueue_style( 'adm-bootstrap', WEDD_THEME_CSS.'bootstrap.min.css' );
+	//	wp_enqueue_style( 'adm-font', '//fonts.googleapis.com/css?family=Lato:400,700,900|Pacifico' );
+	//	wp_enqueue_style( 'adm-bootstrap', WEDD_THEME_CSS.'bootstrap.min.css' );
 	}
 }
 add_action( 'admin_enqueue_scripts', 'wedding_admin_scripts', 10, 1 );

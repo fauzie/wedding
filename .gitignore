@@ -2,3 +2,12 @@
 *.config
 .htaccess
 config.json
+logs
+npm-debug.log*
+pids
+*.pid
+*.seed
+lib-cov
+.grunt
+build/Release
+node_modules

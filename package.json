@@ -1,0 +1,25 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Wedding Website Creator",
+  "main": "js/theme-script.js",
+  "dependencies": {
+    "grunt": "~0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fauzie/wedding.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "fauzievolute",
+  "license": "(ISC) MIT",
+  "bugs": {
+    "url": "https://github.com/fauzie/wedding/issues"
+  }
+}
