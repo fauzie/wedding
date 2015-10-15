@@ -1,6 +1,6 @@
 {
   "name": "wedding",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wedding Website Creator",
   "main": "js/theme-script.js",
   "dependencies": {
