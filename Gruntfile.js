@@ -10,7 +10,12 @@ module.exports = function(grunt) {
         mangle: false
       },
       build: {
-        src: ['js/<%= pkg.name %>.js', 'js/navigation.js', 'js/skip-link-focus-fix.js'],
+        src: [
+          'js/mlpushmenu.js',
+          'js/navigation.js',
+          'js/skip-link-focus-fix.js',
+          'js/<%= pkg.name %>.js'
+        ],
         dest: 'js/<%= pkg.name %>.min.js'
       },
       customizer: {

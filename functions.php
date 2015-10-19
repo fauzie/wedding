@@ -13,6 +13,7 @@
 define( 'WEDD_THEME_PATH', get_template_directory() . '/' );
 define( 'WEDD_THEME_URI', get_template_directory_uri() . '/' );
 define( 'WEDD_THEME_INC', WEDD_THEME_PATH . 'inc/' );
+define( 'WEDD_THEME_ICO', WP_CONTENT_URL . '/icons/' );
 define( 'WEDD_THEME_IMG', WEDD_THEME_URI . 'img/' );
 define( 'WEDD_THEME_CSS', WEDD_THEME_URI . 'css/' );
 define( 'WEDD_THEME_JS', WEDD_THEME_URI . 'js/' );

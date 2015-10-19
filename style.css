@@ -12,6 +12,125 @@ Tags: clean,love,passion,pink,red,girly,woman,responsive,onepage
 */
 
 /*--------------------------------------------------------------
+## Pace Preload Page
+--------------------------------------------------------------*/
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 0;
+}
+.preloader {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: #e8638e;
+	visibility: hidden;
+}
+.preloader svg path {
+	fill: #2b3e50 !important;
+}
+.pace-done {
+	margin-top: -20px;
+}
+.pace-running .preloader {
+	display: block;
+	visibility: visible;
+}
+.site {
+	visibility: hidden;
+}
+.pace-done .site,
+.no-js .site {
+	visibility: visible;
+}
+.sk-chasing-dots {
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+          animation: sk-chasingDotsRotate 2s infinite linear; }
+  .sk-chasing-dots .sk-child {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #2b3e50;
+    border-radius: 100%;
+    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
+  .sk-chasing-dots .sk-dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
+
+@-webkit-keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+/*--------------------------------------------------------------
+## Main
+--------------------------------------------------------------*/
+[data-sr] {
+	visibility: hidden;
+}
+html, body {
+	background-color: #485563 !important;
+}
+body {
+	background-image: url(img/logo.svg);
+	background-position: center 100px;
+	background-size: 300px 100px;
+	background-repeat: no-repeat;
+}
+#page-container {
+	background-color: #2b3e50;
+	display: block;
+}
+.logo {
+	display: block;
+	text-align: center;
+	width: 230px;
+	padding: 20px 10px 0;
+	margin: 0 auto 20px;
+}
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
@@ -154,56 +273,6 @@ Tags: clean,love,passion,pink,red,girly,woman,responsive,onepage
 	top: 5px;
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
-}
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-	content: "";
-	display: table;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-	clear: both;
 }
 
 /*--------------------------------------------------------------

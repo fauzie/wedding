@@ -5,12 +5,6 @@
 get_header(); ?>
 
     <div class="container">
-
-    <div class="row">
-    <div class="col-lg-12 text-center">
-        <img src="<?php echo WP_CONTENT_URL ?>/icons/logo.svg" width="600px" height="auto" alt="My Wedding Logo">
-    </div>
-    </div>
 <!-- Navbar
       ================================================== -->
       <div class="bs-docs-section clearfix">
