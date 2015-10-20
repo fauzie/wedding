@@ -121,6 +121,7 @@ body {
 #page-container {
 	background-color: #2b3e50;
 	display: block;
+	min-height: 100%;
 }
 .logo {
 	display: block;

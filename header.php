@@ -53,15 +53,12 @@
 <div id="page-container" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wedding' ); ?></a>
 
-	<a class="logo" href="<?php echo get_bloginfo('url') ?>" data-sr="move 60px, scale down 30%">
-	<h1><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></h1></a>
-
 	<header id="masthead" class="site-header" role="banner">
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wedding' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+		<a class="logo" href="<?php echo get_bloginfo('url') ?>" data-sr="move 60px, scale down 30%">
+		<h1><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></h1></a>
 	</header><!-- #masthead -->
-
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wedding' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+	</nav><!-- #site-navigation -->
 	<div id="content" class="site-content">
