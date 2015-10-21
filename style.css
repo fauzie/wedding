@@ -106,6 +106,25 @@ Tags: clean,love,passion,pink,red,girly,woman,responsive,onepage
 /*--------------------------------------------------------------
 ## Main
 --------------------------------------------------------------*/
+::-moz-selection {
+    text-shadow: none;
+    background: #e8638e;
+}
+::selection {
+    text-shadow: none;
+    background: #e8638e;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active,
+.btn,
+.btn:focus,
+.btn:active,
+.btn.active {
+    outline: 0;
+}
 [data-sr] {
 	visibility: hidden;
 }
@@ -122,6 +141,7 @@ body {
 	background-color: #2b3e50;
 	display: block;
 	min-height: 100%;
+	z-index: 3;
 }
 .logo {
 	display: block;
@@ -132,8 +152,118 @@ body {
 }
 
 /*--------------------------------------------------------------
+## Leading Header
+--------------------------------------------------------------*/
+
+#header {
+    background-image: url(img/bg-header.jpg);
+    background-repeat: none;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+	position: relative;
+}
+#header .logo {
+	padding-bottom: 30px;
+}
+#header .intro-text {
+    padding-top: 50px;
+    padding-bottom: 70px;
+}
+#header .intro-text .intro-lead-in {
+	font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 35px;
+}
+#header .intro-text .intro-heading {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 45px;
+    margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+#header .intro-text .intro-from {
+	margin-top: 20px;
+}
+#header > div::after {
+    content: '';
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: -10%;
+    box-shadow: 0 0 80px 0 rgba(0,0,0,.3);
+}
+
+/*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+
+.navbar-top {
+	background-color: transparent;
+	height: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.navbar-top .row > [class^='col-'] {
+	position: relative;
+	height: 0;
+}
+.navbar-top .menu-top {
+	position: absolute;
+	background-color: transparent;
+    padding: 25px 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+    border: 0;
+}
+.navbar-top .menu-top a {
+	font-size: 22px;
+	color: #ccc;
+	text-decoration: none;
+}
+.navbar-top .menu-top a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+.navbar-top .menu-top a span {
+	padding-left: 5px;
+}
+.navbar-top .text-right .menu-top a span {
+	padding-right: 5px;
+	padding-left: 0;
+}
+.navbar-top .menu-top a .fa {
+	-moz-transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+.navbar-top .menu-top a:hover .fa {
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.navbar-top .text-right .menu-top a:hover .fa {
+	-moz-transform: rotate(0);
+	-webkit-transform: rotate(0);
+	transform: rotate(0);
+}
+#site-navigation {
+
+}
 .main-navigation {
 	clear: both;
 	display: block;

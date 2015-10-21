@@ -21,6 +21,14 @@ function wedding_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'wedding_body_classes' );
 
+function wedding_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
+}
+add_filter('nav_menu_css_class' , 'wedding_nav_class' , 10 , 2);
+
 /**
  * WordPress AJAX
  * Get Category Link from wp_dropdown_categories

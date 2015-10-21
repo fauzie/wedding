@@ -10,7 +10,7 @@
  */
 function wedding_css_scripts()
 {	
-	wp_enqueue_style( 'wedding-font', '//fonts.googleapis.com/css?family=Lato:300,400,700', array(), null );
+	wp_enqueue_style( 'wedding-font', '//fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico', array(), null );
 	wp_enqueue_style( 'wedding-fa', WEDD_THEME_CSS.'font-awesome.min.css', array(), null );
 	wp_enqueue_style( 'bootstrap', WEDD_THEME_CSS.'bootstrap-pack.min.css', array(), null );
 	wp_enqueue_style( 'wedding-style', get_stylesheet_uri(), array(), null );
@@ -27,7 +27,8 @@ function wedding_js_scripts()
 	wp_enqueue_script( 'scrollReveal', WEDD_THEME_JS.'scrollReveal.min.js', array(), '2.3.2', true );
     wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap', WEDD_THEME_JS.'bootstrap.min.js', array('jquery'), '3.3.5', true );
-	wp_enqueue_script( 'bootstrap-select', WEDD_THEME_JS.'bootstrap-select.min.js', array('bootstrap'), '1.7.4', true );
+	wp_enqueue_script( 'bootstrap-select', WEDD_THEME_JS.'bootstrap-select.min.js', array('jquery'), '1.7.4', true );
+	wp_enqueue_script( 'parallax-scroll', WEDD_THEME_JS.'parallax-scroll.min.js', array('jquery'), '0.2.0', true );
 	
 	wp_enqueue_script( 'wedding-js', WEDD_THEME_JS.'wedding.min.js', array('jquery'), '2015.1015.1956', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

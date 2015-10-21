@@ -120,3 +120,31 @@ function wedding_category_transient_flusher() {
 }
 add_action( 'edit_category', 'wedding_category_transient_flusher' );
 add_action( 'save_post',     'wedding_category_transient_flusher' );
+
+/*
+ * Shorthand for get_post_meta
+ */
+function mw_meta( $prefix, $meta = '', $echo = false, $ID = null ) {
+
+	if( $ID === null ){
+		global $post;
+		$ID = ( isset($post->ID) ) ? $post->ID : get_the_ID();
+	}
+	$value = get_post_meta( $ID, $prefix, true );
+	$return = '';
+
+	if( !empty($value) && is_array($value) ){
+		if( $meta != '' && array_key_exists($meta, $value))
+			$return = $value[$meta];
+		else
+			$return = $value;
+	}
+	if( $echo ){
+		if( is_array($return) )
+			var_dump($return);
+		else
+			echo (!empty($return)) ? $return : '';
+	} else {
+		return $return;
+	}
+}

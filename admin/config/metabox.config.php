@@ -11,7 +11,7 @@ $options      = array();
 // -----------------------------------------
 $options[]    = array(
   'id'        => '_custom_page_options',
-  'title'     => 'Custom Page Options',
+  'title'     => 'Page Options',
   'post_type' => 'page',
   'context'   => 'normal',
   'priority'  => 'default',
@@ -19,40 +19,32 @@ $options[]    = array(
 
     // begin: a section
     array(
-      'name'  => 'section_1',
-      'title' => 'Section 1',
-      'icon'  => 'fa fa-cog',
+      'name'  => 'subheader',
+      'title' => 'Sub-Header',
+      'icon'  => 'fa fa-header',
 
       // begin: fields
       'fields' => array(
 
         // begin: a field
-        array(
-          'id'    => 'section_1_text',
-          'type'  => 'text',
-          'title' => 'Text Field',
-        ),
-        // end: a field
-
-        array(
-          'id'    => 'section_1_textarea',
-          'type'  => 'textarea',
-          'title' => 'Textarea Field',
-        ),
-
-        array(
-          'id'    => 'section_1_upload',
-          'type'  => 'upload',
-          'title' => 'Upload Field',
-        ),
-
-        array(
-          'id'    => 'section_1_switcher',
+		array(
+          'id'    => 'subheader_logo',
           'type'  => 'switcher',
-          'title' => 'Switcher Field',
-          'label' => 'Yes, Please do it.',
+          'title' => 'View Logo',
+          'label' => 'Yes, display it.',
         ),
-
+        array(
+          'id'    => 'subheader_lead',
+          'type'  => 'text',
+          'title' => 'Lead-In Text',
+          'multilang' => true
+        ),
+        array(
+          'id'    => 'subheader_sublead',
+          'type'  => 'text',
+          'title' => 'Sub-Lead Text',
+          'multilang' => true
+        ),
       ), // end: fields
     ), // end: a section
 
@@ -108,7 +100,7 @@ $options[]    = array(
 // -----------------------------------------
 // Page Side Metabox Options               -
 // -----------------------------------------
-$options[]    = array(
+/*$options[]    = array(
   'id'        => '_custom_page_side_options',
   'title'     => 'Custom Page Side Options',
   'post_type' => 'page',
@@ -196,6 +188,6 @@ $options[]    = array(
     ),
 
   ),
-);
+);*/
 
 CSFramework_Metabox::instance( $options );

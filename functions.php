@@ -76,10 +76,7 @@ endif; // wedding_setup
 add_action( 'after_setup_theme', 'wedding_setup' );
 
 /**
- *
- * Codestar Framework
- * A Lightweight and easy-to-use WordPress Options Framework
- *
+ * Admin Framework
  */
 require_once WEDD_THEME_PATH.'admin/framework.php';
 /**
