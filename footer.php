@@ -14,13 +14,38 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wedding' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'wedding' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'wedding' ), 'wedding', '<a href="http://fauzie.my.id" rel="designer">fauzie</a>' ); ?>
+		<div class="site-info container">
+			<div class="row">
+				<div class="col-md-4 copyright">
+				&copy; 2015 <a href="<?php echo bloginfo('url') ?>">My Wedding</a>. All Right Reserved.
+				</div>
+				<div class="col-md-4 text-center">
+					<ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a>
+                        </li>
+                    </ul>
+				</div>
+				<div class="col-md-4 text-right">
+					<ul class="list-inline quicklinks">
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Term of Use</a></li>
+						<li><a href="#header" class="hash" title="Back to Top">
+							<span class="fa-stack">
+							  <i class="fa fa-square fa-stack-2x"></i>
+							  <i class="fa fa-chevron-up fa-stack-1x fa-inverse"></i>
+							</span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+</div><!-- /pusher -->
 
 <?php wp_footer(); ?>
 

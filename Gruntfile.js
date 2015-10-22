@@ -9,8 +9,9 @@ module.exports = function(grunt) {
         compress: true,
         mangle: false
       },
-      build: {
+      wedding: {
         src: [
+          'js/classie.js',
           'js/mlpushmenu.js',
           'js/navigation.js',
           'js/skip-link-focus-fix.js',
@@ -28,20 +29,14 @@ module.exports = function(grunt) {
         report: 'min',
         sourceMap: true
       },
-      build: {
+      bootstrap: {
         src: ['css/bootstrap.css', 'css/bootstrap-select.css', 'css/bootstrap-checkbox.css'],
         dest: 'css/bootstrap-pack.min.css'
       },
-      target: {
-        files: [{
-          expand: true,
-          cwd: 'css',
-          src: ['*.css', '!*.min.css', '!bootstrap*.css'],
-          dest: 'css',
-          ext: '.min.css'
-        }]
-      },
-
+      wedding: {
+	    src: ['css/*.css', '!css/*.min.css', '!css/bootstrap*.css'],
+	    dest: 'css/<%= pkg.name %>.min.css'
+      }
     }
   });
 

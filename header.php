@@ -51,7 +51,11 @@
      </div>
 </div>
 
-<div id="page-container" class="hfeed site">
+<div class="mp-pusher" id="mp-pusher"><!-- Push Wrapper -->
+
+<?php get_template_part( WEDD_THEME_SECT, 'pusher' ); ?>
+
+<div id="page-container" class="hfeed site scroller">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wedding' ); ?></a>
 
 	<header id="header" class="site-header" role="banner" data-width="1600" data-height="900"><div>
@@ -71,16 +75,16 @@
 			</div>
 			<?php endif; ?>
 		</div>
-	</div></header><!-- #masthead -->
+	</div></header><!-- #header -->
 
 	<div class="container navbar-top">
 		<div class="row">
 			<div class="col-md-3">
 				<div class="menu-top">
-					<a href="#"><i class="fa fa-bars"></i> <span>Menu</span></a>
+					<a href="#" id="trigger"><i class="fa fa-bars"></i> <span>Menu</span></a>
 				</div>
 			</div>
-			<div class="col-md-3 col-md-offset-9">
+			<div class="col-md-3 col-md-offset-6">
 				<div class="menu-top text-right">
 					<a href="#"><span>Login</span> <i class="fa fa-lock"></i></a>
 				</div>
