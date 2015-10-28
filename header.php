@@ -44,21 +44,34 @@
 
 <body <?php body_class(); ?>>
 <div id="preloader" class="preloader">
-	<h1 class="text-center" style="width:280px;padding:80px 10px 0;margin:0 auto 20px"><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></h1>
-	<div class="sk-chasing-dots">
-       <div class="sk-child sk-dot1"></div>
-       <div class="sk-child sk-dot2"></div>
-     </div>
-</div>
+	<div class="text-center">
+		<h1><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></h1>
+		<div class="sk-chasing-dots">
+			<div class="sk-child sk-dot1"></div>
+			<div class="sk-child sk-dot2"></div>
+		</div>
+	</div>
+</div><!-- #preloader -->
 
-<div class="mp-pusher" id="mp-pusher"><!-- Push Wrapper -->
-
-<?php get_template_part( WEDD_THEME_SECT, 'pusher' ); ?>
-
-<div id="page-container" class="hfeed site scroller">
+<div id="page-container" class="hfeed site push">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wedding' ); ?></a>
 
-	<header id="header" class="site-header" role="banner" data-width="1600" data-height="900"><div>
+	<header id="header" class="site-header" role="banner" data-width="1600" data-height="900">
+	<div class="wrap">
+		<div class="container navbar-top">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="menu-top">
+						<a href="#" id="trigger"><i class="fa fa-bars"></i> <span>Menu</span></a>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-6">
+					<div class="menu-top text-right">
+						<a href="#"><span>Login</span> <i class="fa fa-lock"></i></a>
+					</div>
+				</div>
+			</div>
+		</div><!-- .navbar-top -->
 		<div class="container text-center">
 			<a class="logo" href="<?php echo get_bloginfo('url') ?>" data-sr="move 60px, scale down 30%">
 			<h1><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></h1></a>
@@ -69,56 +82,15 @@
 				<div class="intro-lead-in" data-sr="wait 2.1s, flip 180deg">
 					<?php mw_meta( '_custom_page_options', 'subheader_sublead', true ) ?></div>
 				<div class="intro-form">
-					<button type="button" class="btn btn-primary btn-lg" data-sr="wait 3s, scale down 40%">Create Now</button>
-					<h6><a href="" data-sr="wait 3.5s, enter top, move 30px">How To?</a></h6>
+					<button type="button" class="btn btn-primary btn-lg" data-sr="wait 3s, scale down 40%">
+						Create Now
+					</button>
+					<h6><a href="" data-sr="wait 3.5s, enter top, move 30px">How it's Work?</a></h6>
 				</div>
 			</div>
 			<?php endif; ?>
 		</div>
-	</div></header><!-- #header -->
-
-	<div class="container navbar-top">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="menu-top">
-					<a href="#" id="trigger"><i class="fa fa-bars"></i> <span>Menu</span></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-md-offset-6">
-				<div class="menu-top text-right">
-					<a href="#"><span>Login</span> <i class="fa fa-lock"></i></a>
-				</div>
-			</div>
-		</div>
 	</div>
-
-	<!-- Navigation -->
-    <nav id="site-navigation" class="navbar navbar-default">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-					<?php wp_nav_menu( array(
-	 					'theme_location' => 'primary',
-	 					'menu_id' => 'primary-menu',
-	 					'items_wrap' => '%3$s',
-	 					'container' => false ) ); ?>
-				</ul>
-            </div><!-- /.navbar-collapse -->
-        </div>
-	</nav><!-- #site-navigation -->
+	</header><!-- #header -->
 
 	<div id="content" class="site-content">

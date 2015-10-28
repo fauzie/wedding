@@ -36,63 +36,15 @@ $options[]    = array(
         array(
           'id'    => 'subheader_lead',
           'type'  => 'text',
-          'title' => 'Lead-In Text',
-          'multilang' => true
+          'title' => 'Lead-In Text'
         ),
         array(
           'id'    => 'subheader_sublead',
           'type'  => 'text',
           'title' => 'Sub-Lead Text',
-          'multilang' => true
         ),
       ), // end: fields
     ), // end: a section
-
-    // begin: a section
-    array(
-      'name'  => 'section_2',
-      'title' => 'Section 2',
-      'icon'  => 'fa fa-tint',
-      'fields' => array(
-
-        array(
-          'id'      => 'section_2_color_picker_1',
-          'type'    => 'color_picker',
-          'title'   => 'Color Picker 1',
-          'default' => '#2ecc71',
-        ),
-
-        array(
-          'id'      => 'section_2_color_picker_2',
-          'type'    => 'color_picker',
-          'title'   => 'Color Picker 2',
-          'default' => '#3498db',
-        ),
-
-        array(
-          'id'      => 'section_2_color_picker_3',
-          'type'    => 'color_picker',
-          'title'   => 'Color Picker 3',
-          'default' => '#9b59b6',
-        ),
-
-        array(
-          'id'      => 'section_2_color_picker_4',
-          'type'    => 'color_picker',
-          'title'   => 'Color Picker 4',
-          'default' => '#34495e',
-        ),
-
-        array(
-          'id'      => 'section_2_color_picker_5',
-          'type'    => 'color_picker',
-          'title'   => 'Color Picker 5',
-          'default' => '#e67e22',
-        ),
-
-      ),
-    ),
-    // end: a section
 
   ),
 );

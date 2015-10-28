@@ -9,10 +9,17 @@ module.exports = function(grunt) {
         compress: true,
         mangle: false
       },
+      bsjs: {
+      	src: ['js/bootstrap*.js', '!js/*.min.js', '!js/jquery*.js'],
+      	dest: 'js/bootstrap.min.js'
+      },
+      jquery: {
+      	src: ['js/jquery*.js', '!js/*.min.js', '!js/bootstrap*.js'],
+      	dest: 'js/jquery.plugins.min.js'
+      },
       wedding: {
         src: [
           'js/classie.js',
-          'js/mlpushmenu.js',
           'js/navigation.js',
           'js/skip-link-focus-fix.js',
           'js/<%= pkg.name %>.js'

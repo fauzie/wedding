@@ -33,19 +33,12 @@
 					<ul class="list-inline quicklinks">
 						<li><a href="#">Privacy Policy</a></li>
 						<li><a href="#">Term of Use</a></li>
-						<li><a href="#header" class="hash" title="Back to Top">
-							<span class="fa-stack">
-							  <i class="fa fa-square fa-stack-2x"></i>
-							  <i class="fa fa-chevron-up fa-stack-1x fa-inverse"></i>
-							</span>
-						</a></li>
 					</ul>
 				</div>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-</div><!-- /pusher -->
 
 <?php wp_footer(); ?>
 

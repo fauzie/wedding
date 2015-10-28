@@ -15,23 +15,44 @@
 .preloader {
 	display: none;
 	position: fixed;
-	top: 0;
+	top: -2600px;
 	left: 0;
-	height: 100%;
-	width: 100%;
+	height: 0;
+	width: 0;
 	overflow: hidden;
+	z-index: 1098;
 	background-color: #e8638e;
-	visibility: hidden;
+	-webkit-transition: all .6s;
+       -moz-transition: all .6s;
+        	transition: all .6s;
+}
+.preloader .text-center {
+	position: relative;
+	overflow: visible;
+	width: 280px;
+	padding: 80px 10px 0;
+	margin: 0 auto 20px;
+}
+.preloader .text-center h1 {
+	-webkit-animation: showPreload .3s linear;
+          animation: showPreload .3s linear;
+}
+@keyframes showPreload {
+	from { 
+		-webkit-transform: scale(0);
+            transform: scale(0); }
+	to { 
+		-webkit-transform: scale(1);
+            transform: scale(1); }
 }
 .preloader svg path {
 	fill: #2b3e50 !important;
 }
-.pace-done {
-	margin-top: -20px;
-}
 .pace-running .preloader {
 	display: block;
-	visibility: visible;
+	height: 100%;
+	width: 100%;
+	top: 0;
 }
 .site {
 	visibility: hidden;

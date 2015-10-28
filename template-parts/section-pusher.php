@@ -1,5 +1,5 @@
 <!-- mp-menu -->
-<nav id="mp-menu" class="mp-menu">
+<nav id="menu" class="panel-menu">
 	<div class="mp-level">
 		<h2 class="icon icon-world">All Categories</h2>
 		<ul>

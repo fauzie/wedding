@@ -172,18 +172,14 @@ ul.social-buttons li a:active {
 	color: #fff;
 }
 footer .copyright,
-footer ul.quicklinks {
+footer .quicklinks {
 	line-height: 40px;
 	margin-bottom: 0;
 }
 .site-footer a {
 	color: #ccc;
 }
-.site-footer a.hash {
-	color: #485563;
-}
-.site-footer a:hover,
-.site-footer a.hash:hover {
+.site-footer a:hover {
 	color: #e8638e;
 }
 /*--------------------------------------------------------------
