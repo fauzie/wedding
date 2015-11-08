@@ -13,8 +13,19 @@ jQuery(document).ready(function($) {
 		isMobile = ( $(window).width() <= 768 ) ? true : false;
 		
     $('select').selectpicker();
-
+	
 	if ( !isMobile ){
+	
+		$('.menu-link').bigSlide({ 
+			easyClose: true,
+			afterOpen: function() {
+				$('#ofcanvas').removeClass('hide');
+			},
+			afterClose: function() {
+				$('#ofcanvas').addClass('hide');
+			}
+		});
+	
 		$headers.parallaxScroll({
 	      friction: 0.6
 	    });

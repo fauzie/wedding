@@ -37,11 +37,11 @@ module.exports = function(grunt) {
         sourceMap: true
       },
       bootstrap: {
-        src: ['css/bootstrap.css', 'css/bootstrap-select.css', 'css/bootstrap-checkbox.css'],
+        src: ['css/bootstrap*.css', '!css/*.min.css'],
         dest: 'css/bootstrap-pack.min.css'
       },
       wedding: {
-	    src: ['css/*.css', '!css/*.min.css', '!css/bootstrap*.css'],
+	    src: ['css/style-*.css', '!css/*.min.css'],
 	    dest: 'css/<%= pkg.name %>.min.css'
       }
     }

@@ -4,16 +4,11 @@
  */
 get_header(); ?>
 
-<div id="primary" class="content-area container">
-	<main id="main" class="site-main row" role="main">
+<header class="strike-line entry-header">
+	<h1 class="text-sans">&quot;<?php the_title() ?>&quot;</h1>
+	<div class="lineee"></div>
+</header><!-- .entry-header -->
 
-		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( WEDD_THEME_CONT, 'page' ); ?>
-
-		<?php endwhile; // End of the loop. ?>
-
-	</main><!-- #main -->
-</div><!-- #primary -->
+<?php get_template_part( WEDD_THEME_CONT, 'home' ); ?>
 
 <?php get_footer(); ?>

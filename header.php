@@ -52,17 +52,32 @@
 		</div>
 	</div>
 </div><!-- #preloader -->
-
-<div id="page-container" class="hfeed site push">
+	
+<nav id="menu" class="panel navbar-default" role="navigation">
+    <ul class="nav">
+		<li class="fa">
+			<a href="<?php echo get_bloginfo('url') ?>"><?php echo file_get_contents(WEDD_THEME_IMG."logo.svg"); ?></a>
+		</li>
+        <?php wp_nav_menu( array(
+        	'container'	=> false,
+			'theme_location' => 'primary',
+			'menu_id' => 'primary-menu',
+			'items_wrap' => '%3$s',
+        ) ); ?>
+    </ul>
+</nav>
+<div id="ofcanvas" class="naveasy-close hide"></div>
+	
+<div id="page-container" class="hfeed site">	
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wedding' ); ?></a>
 
-	<header id="header" class="site-header" role="banner" data-width="1600" data-height="900">
+	<header id="header" class="site-header push" role="banner" data-width="1600" data-height="900">
 	<div class="wrap">
 		<div class="container navbar-top">
 			<div class="row">
 				<div class="col-md-3">
 					<div class="menu-top">
-						<a href="#" id="trigger"><i class="fa fa-bars"></i> <span>Menu</span></a>
+						<a href="#" id="trigger" class="menu-link"><i class="fa fa-bars"></i> <span>Menu</span></a>
 					</div>
 				</div>
 				<div class="col-md-3 col-md-offset-6">
@@ -82,10 +97,7 @@
 				<div class="intro-lead-in" data-sr="wait 2.1s, flip 180deg">
 					<?php mw_meta( '_custom_page_options', 'subheader_sublead', true ) ?></div>
 				<div class="intro-form">
-					<button type="button" class="btn btn-primary btn-lg" data-sr="wait 3s, scale down 40%">
-						Create Now
-					</button>
-					<h6><a href="" data-sr="wait 3.5s, enter top, move 30px">How it's Work?</a></h6>
+					<?php get_template_part( WEDD_THEME_SECT, 'check' ); ?>
 				</div>
 			</div>
 			<?php endif; ?>
@@ -93,4 +105,4 @@
 	</div>
 	</header><!-- #header -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content push">

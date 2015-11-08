@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Wedding Website Creator",
   "main": "js/wedding.js",
+  "style": "style.css",
   "dependencies": {
     "grunt": "~0.4.5"
   },
@@ -23,7 +24,7 @@
     "wordpress"
   ],
   "author": "fauzievolute",
-  "license": "(ISC) MIT",
+  "license": "",
   "bugs": {
     "url": "https://github.com/fauzie/wedding/issues"
   }
