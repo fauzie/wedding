@@ -1,0 +1,112 @@
+/*--------------------------------------------------------------
+## Pace Preload Page
+--------------------------------------------------------------*/
+.pace {
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 0;
+}
+.preloader {
+	display: none;
+	position: fixed;
+	top: -2600px;
+	left: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	z-index: 1098;
+	background-color: #e8638e;
+	-webkit-transition: all .6s;
+       -moz-transition: all .6s;
+        	transition: all .6s;
+}
+.preloader .text-center {
+	position: relative;
+	overflow: visible;
+	width: 280px;
+	padding: 80px 10px 0;
+	margin: 0 auto 20px;
+}
+.preloader .text-center h1 {
+	-webkit-animation: showPreload .3s linear;
+          animation: showPreload .3s linear;
+}
+@keyframes showPreload {
+	from { 
+		-webkit-transform: scale(0);
+            transform: scale(0); }
+	to { 
+		-webkit-transform: scale(1);
+            transform: scale(1); }
+}
+.preloader svg path {
+	fill: #2b3e50 !important;
+}
+.pace-running .preloader {
+	display: block;
+	height: 100%;
+	width: 100%;
+	top: 0;
+}
+.site {
+	visibility: hidden;
+}
+.pace-done .site,
+.no-js .site {
+	visibility: visible;
+}
+.sk-chasing-dots {
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+          animation: sk-chasingDotsRotate 2s infinite linear; }
+  .sk-chasing-dots .sk-child {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #2b3e50;
+    border-radius: 100%;
+    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
+  .sk-chasing-dots .sk-dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
+
+@-webkit-keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }

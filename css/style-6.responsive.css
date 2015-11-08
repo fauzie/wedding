@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+	
+	#header.staywithme .navbar-top .menu-top {
+		padding: 10px 0;
+	}
+	
+	.logo {
+		width: 140px;
+	}
+	
+	#header.staywithme .logo {
+		width: 100px;
+	}
+	
+	footer .copyright, footer ul.quicklinks {
+		text-align: center;
+	}
+	
+	.site-footer {
+		padding-bottom: 0;
+	}
+	
+	.site-footer div[class^="col-"] {
+		padding-bottom: 15px;
+	}
+}

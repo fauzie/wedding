@@ -3,21 +3,6 @@
  *
  * ------------------------------------------------------------------------------------------------
  *
- * Codestar Framework
- * A Lightweight and easy-to-use WordPress Options Framework
- *
- * Plugin Name: Codestar Framework
- * Plugin URI: http://codestarframework.com/
- * Author: Codestar
- * Author URI: http://codestarlive.com/
- * Version: 1.0.0
- * Description: A Lightweight and easy-to-use WordPress Options Framework
- * License: GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain: cs-framework
- *
- * ------------------------------------------------------------------------------------------------
- *
  * Copyright 2015 Codestar <info@codestarlive.com>
  *
  * This program is free software; you can redistribute it and/or modify

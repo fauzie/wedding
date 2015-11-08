@@ -13,10 +13,12 @@
 define( 'WEDD_THEME_PATH', get_template_directory() . '/' );
 define( 'WEDD_THEME_URI', get_template_directory_uri() . '/' );
 define( 'WEDD_THEME_INC', WEDD_THEME_PATH . 'inc/' );
+define( 'WEDD_THEME_ICO', WP_CONTENT_URL . '/icons/' );
 define( 'WEDD_THEME_IMG', WEDD_THEME_URI . 'img/' );
 define( 'WEDD_THEME_CSS', WEDD_THEME_URI . 'css/' );
 define( 'WEDD_THEME_JS', WEDD_THEME_URI . 'js/' );
-define( 'WEDD_THEME_PART', WEDD_THEME_PATH . 'template-parts/' );
+define( 'WEDD_THEME_CONT', 'template-parts/content' );
+define( 'WEDD_THEME_SECT', 'template-parts/section' );
 
 if ( ! function_exists( 'wedding_setup' ) ) :
 /**
@@ -75,10 +77,7 @@ endif; // wedding_setup
 add_action( 'after_setup_theme', 'wedding_setup' );
 
 /**
- *
- * Codestar Framework
- * A Lightweight and easy-to-use WordPress Options Framework
- *
+ * Admin Framework
  */
 require_once WEDD_THEME_PATH.'admin/framework.php';
 /**

@@ -1,0 +1,193 @@
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.panel {
+    position: fixed;
+    left: -15.625em; /*left or right and the width of your navigation panel*/
+    width: 15.625em; /*should match the above value*/
+	z-index: 99;
+}
+.wrap {
+    position: relative;
+}
+.naveasy-close {
+	background-color: rgba( 0,0,0,.4 );
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 98;
+}
+.navbar-top {
+	background-color: transparent;
+	height: auto;
+}
+.navbar-top .row > [class^='col-'] {
+	position: relative;
+	height: 1px;
+}
+.navbar-top .menu-top {
+	position: absolute;
+	background-color: transparent;
+    padding: 25px 0;
+    -webkit-transition: padding .3s;
+    -moz-transition: padding .3s;
+    transition: padding .3s;
+    border: 0;
+	top: 10px;
+}
+.navbar-top .menu-top.text-right {
+	right: 15px;
+}
+.navbar-top .menu-top a {
+	font-size: 20px;
+	color: #ccc;
+	text-decoration: none;
+}
+.navbar-top .menu-top a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+.navbar-top .menu-top a span {
+	padding-right: 5px;
+}
+.navbar-top .menu-top #trigger span {
+	padding-left: 5px;
+	padding-right: 0;
+}
+.navbar-top .menu-top a .fa {
+	-moz-transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+#trigger.active .fa {
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+## BigSlide Panel Menu
+--------------------------------------------------------------*/
+
+.panel ul li {
+	width: 100%;
+	position: relative;
+	font-size: 18px;
+	line-height: 30px;
+}
+.panel .fa a {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	display: block;
+	color: #fff;
+}
+.panel .fa a:focus,
+.panel .fa a:hover {
+	text-decoration: none;
+}
+.panel .fa:before {
+	position: absolute;
+	top: 10px;
+	left: 12px;
+	width: 30px;
+	z-index: 1;
+}
+.panel .fa > a {
+	padding-left: 40px;
+	box-shadow: inset 0 -1px rgba(43,62,80,.2);
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+    -moz-transition: background 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.panel .nav > li:first-child a {
+	padding: 25px 50px;
+}
+.panel .nav > li:first-child a .svg-logo {
+	fill: rgba(43, 62, 80, 0.5) !important;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+.panel .nav > li:first-child a .svg-desc {
+	display: none;
+	visibility: hidden;
+}
+.panel .nav > li:first-child a:hover {
+	background-color: transparent;
+}
+.panel .nav > li:first-child a:hover .svg-logo {
+	fill: #e8638e !important;
+}
+.panel .nav li > a:focus,
+.panel .nav li > a:hover,
+.panel .nav .active > a {
+	background-color: rgba(43, 62, 80, 0.5);
+}
+.panel .nav .active > a:focus,
+.panel .nav .active > a:hover {
+	background-color: rgba(43, 62, 80, 0.8);
+}
+.panel .sub-menu {
+	background-color: rgba(43,62,80,.2);
+	list-style: none;
+	padding: 0;
+	max-height: 0;
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+.panel .sub-menu > li > a {
+    padding: 8px 15px 8px 40px;
+    font-size: 15px;
+    box-shadow: inset 0 -1px rgba(43,62,80,.2);
+    -webkit-transition: background 0.3s, box-shadow 0.3s;
+    -moz-transition: background 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+.panel .nav > li:hover > a + .sub-menu,
+.panel .nav > li.active > a + .sub-menu {
+	max-height: 999px;
+}
