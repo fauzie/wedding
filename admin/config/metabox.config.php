@@ -1,4 +1,19 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+
+function cs_get_sidebars() {
+
+	global $wp_registered_sidebars;
+
+    if ( empty( $wp_registered_sidebars ) )
+        return;
+
+	$side = array();
+	foreach ( $wp_registered_sidebars as $sidebar ) {
+		$side[ $sidebar['id'] ] = ucwords( $sidebar['name'] );
+	}
+	return $side;
+}
+
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
 // METABOX OPTIONS
@@ -19,30 +34,42 @@ $options[]    = array(
 
     // begin: a section
     array(
-      'name'  => 'subheader',
-      'title' => 'Sub-Header',
-      'icon'  => 'fa fa-header',
+      'name'  => 'sidebar-section',
+      'title' => __( 'Sidebar Settings', 'wedding' ),
+      'icon'  => 'fa fa-bars',
 
       // begin: fields
       'fields' => array(
 
         // begin: a field
 		array(
-          'id'    => 'subheader_logo',
+          'id'    => 'sidebar',
           'type'  => 'switcher',
-          'title' => 'View Logo',
-          'label' => 'Yes, display it.',
+          'title' => __( 'Enable Sidebar', 'wedding' ),
+          'label' => __( 'Yes, display it.', 'wedding' ),
+		  'default' => true
         ),
-        array(
-          'id'    => 'subheader_lead',
-          'type'  => 'text',
-          'title' => 'Lead-In Text'
-        ),
-        array(
-          'id'    => 'subheader_sublead',
-          'type'  => 'text',
-          'title' => 'Sub-Lead Text',
-        ),
+		array(
+		  'id'        => 'sidebar-pos',
+		  'type'      => 'image_select',
+		  'title'     => __( 'Sidebar Positions' ),
+		  'options'   => array(
+			'left'    => get_template_directory_uri() .'/img/2cl.png',
+			'right'   => get_template_directory_uri() .'/img/2cr.png',
+			'default' => get_template_directory_uri() .'/img/1c.png',
+		  ),
+		  'default'   => 'right',
+		  'dependency' => array( 'sidebar', '==', 'true' ),
+		),
+		array(
+		  'id'         => 'the-sidebar',
+		  'type'       => 'select',
+		  'title'      => 'Select Sidebar',
+		  'options'    => cs_get_sidebars(),
+		  'class'      => 'chosen',
+		  'dependency' => array( 'sidebar|sidebar-pos_default', '==|==', 'true|false' ),
+		),
+
       ), // end: fields
     ), // end: a section
 

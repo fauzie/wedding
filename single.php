@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area container">
+		<main id="main" class="site-main row" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -27,8 +27,9 @@ get_header(); ?>
 
 		<?php endwhile; // End of the loop. ?>
 
+		<?php if( wedding_sidebar( 'check' ) ) get_sidebar(); ?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

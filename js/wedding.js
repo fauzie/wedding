@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
 		$headrsr = $('#header a.logo'),
 		$menutop = $('a#trigger'),
 		$content = $('#content'),
-		isMobile = ( $(window).width() <= 768 ) ? true : false;
+		isMobile = ( $(window).width() <= 991 ) ? true : false;
 		
     $('select').selectpicker();
 	

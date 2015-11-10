@@ -6,13 +6,13 @@
  *
  * @package My_Wedding
  */
-
 ?>
-<?php while ( have_posts() ) : the_post(); ?>
-<div id="primary" class="content-area container">
+
+<div id="primary" class="content-area container-fluid">
 	<main id="main" class="site-main row" role="main">
 		
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php while ( have_posts() ) : the_post(); ?>
+	<article id="post-<?php the_ID(); ?>" <?php wedding_sidebar( 'content' ); ?>>
 
 		<div class="entry-content">
 			<?php the_content(); ?>
@@ -22,7 +22,12 @@
 
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-## -->
+	<?php endwhile; // End of the loop. ?>
+
+	<?php
+	if( wedding_sidebar( 'check' ) )
+		get_sidebar();
+	?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
-<?php endwhile; // End of the loop. ?>

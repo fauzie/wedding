@@ -30,8 +30,9 @@ get_header(); ?>
 
 		<?php endwhile; // End of the loop. ?>
 
+		<?php if( wedding_sidebar( 'check' ) ) get_sidebar(); ?>
+
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

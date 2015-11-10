@@ -93,9 +93,9 @@
 			<?php if( is_front_page() ): ?>
 			<div class="intro-text">
 				<div class="intro-heading" data-sr="wait 0.5s, enter top, move 80px, over 0.6s">
-					<?php mw_meta( '_custom_page_options', 'subheader_lead', true ) ?></div>
+					<?php echo cs_get_option( 'leadin' ); ?></div>
 				<div class="intro-lead-in" data-sr="wait 2.1s, flip 180deg">
-					<?php mw_meta( '_custom_page_options', 'subheader_sublead', true ) ?></div>
+					<?php echo cs_get_option( 'sublead' ); ?></div>
 				<div class="intro-form">
 					<?php get_template_part( WEDD_THEME_SECT, 'check' ); ?>
 				</div>

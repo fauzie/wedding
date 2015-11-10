@@ -7,11 +7,11 @@
  * @package My_Wedding
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( wedding_sidebar() ) ) {
 	return;
 }
 ?>
 
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<div id="secondary" class="widget-area <?php wedding_sidebar('sidebar') ?>" role="complementary">
+	<?php dynamic_sidebar( wedding_sidebar() ); ?>
 </div><!-- #secondary -->
