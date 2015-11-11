@@ -6,6 +6,18 @@
  */
 
 /**
+ * Adds custom Rewrite Rules
+ */
+function wedding_rewrite_rule() {
+	$register = cs_get_option( 'f-register', 0 );
+	$register_slug = get_post( $register )->post_name;
+
+	add_rewrite_tag( '%step%', '([^&]+)' );
+	add_rewrite_rule( '^'.$register_slug.'/([^/]*)/([^/]*)/?','index.php?page_id='.$register.'&$matches[1]=$matches[2]', 'top' );
+}
+add_action( 'init', 'wedding_rewrite_rule', 10, 0 );
+
+/**
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
@@ -21,6 +33,9 @@ function wedding_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'wedding_body_classes' );
 
+/**
+ * Adds custom classes to active menu
+ */
 function wedding_nav_class($classes, $item){
      if( in_array('current-menu-item', $classes) ){
              $classes[] = 'active ';
@@ -82,6 +97,24 @@ function wedding_sidebar( $mode = '', $post_id = '' ) {
 				return $mw_the;
 			break;
 	}
+}
+
+/**
+ * Get URL Link frontend parameters
+ *
+ * @param string $template
+ * @return string
+ */
+function wedding_get_permalink( $template = '' ) {
+
+	if( $template == '' )
+		return home_url();
+
+	$template = 'f-' . $template;
+	$optvalue = cs_get_option( $template, '' );
+
+	if( $optvalue != '' )
+		return esc_url( get_permalink( $optvalue ) );
 }
 
 /**

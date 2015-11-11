@@ -6,7 +6,7 @@
 				<span class="input-group-addon addon-http">http://</span>
 				<input type="text" id="domain" name="domain" class="form-control check-domain" placeholder="wedding name..." data-minlength="5" pattern="^[a-z][-a-z0-9]*$" required>
 				<span class="fa fa-lg form-control-feedback" aria-hidden="true"></span>
-				<span class="input-group-addon addon-domain">.mywedding.pw</span>
+				<span class="input-group-addon addon-domain">.<?php echo $_SERVER['SERVER_NAME']; ?></span>
 			</div>
 			<div class="button-group">
 				<button id="check" class="btn btn-primary btn-lg" type="submit"><?php echo cs_get_option( 'check-btn' ); ?></button>

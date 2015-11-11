@@ -1,19 +1,5 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
 
-function cs_get_sidebars() {
-
-	global $wp_registered_sidebars;
-
-    if ( empty( $wp_registered_sidebars ) )
-        return;
-
-	$side = array();
-	foreach ( $wp_registered_sidebars as $sidebar ) {
-		$side[ $sidebar['id'] ] = ucwords( $sidebar['name'] );
-	}
-	return $side;
-}
-
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
 // METABOX OPTIONS

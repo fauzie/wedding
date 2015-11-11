@@ -53,6 +53,35 @@ body {
 }
 
 /*--------------------------------------------------------------
+# Form Style
+--------------------------------------------------------------*/
+
+::input-placeholder {
+	color: #485563 !important;
+}
+::-webkit-input-placeholder {
+	color: #485563 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: #485563 !important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+	color: #485563 !important;
+}
+:-ms-input-placeholder {
+	color: #485563 !important;
+}
+.form-group {
+	position: relative;
+}
+a#extend:hover {
+	text-decoration: none;
+}
+.mu_register .form-control-feedback {
+	right: 15px;
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */

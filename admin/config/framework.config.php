@@ -1,4 +1,36 @@
 <?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+
+if ( ! function_exists( 'cs_get_sidebars' ) ):
+function cs_get_sidebars() {
+
+	global $wp_registered_sidebars;
+
+    if ( empty( $wp_registered_sidebars ) )
+        return;
+
+	$side = array();
+	foreach ( $wp_registered_sidebars as $sidebar ) {
+		$side[ $sidebar['id'] ] = ucwords( $sidebar['name'] );
+	}
+	return $side;
+}
+endif;
+
+if ( ! function_exists( 'cs_get_pages' ) ):
+function cs_get_pages( $template = '' ) {
+
+	$posts = get_posts( 'post_type=page' );
+	$page = array();
+	foreach( $posts as $post ){
+		if( $template != '' && get_post_meta($post->ID,'_wp_page_template',true) == $template )
+			$page[ $post->ID ] = $post->post_title;
+		else
+			$page[ $post->ID ] = $post->post_title;
+	}
+	return $page;
+}
+endif;
+
 // ===============================================================================================
 // -----------------------------------------------------------------------------------------------
 // FRAMEWORK SETTINGS
@@ -95,141 +127,42 @@ $options[]      = array(
 // a option section for options overview  -
 // ----------------------------------------
 $options[]      = array(
-  'name'        => 'overwiew',
-  'title'       => 'Overview',
-  'icon'        => 'fa fa-star',
+  'name'        => 'frontend',
+  'title'       => __( 'Frontend Form', 'wedding' ),
+  'icon'        => 'fa fa-sign-in',
 
   // begin: fields
   'fields'      => array(
 
     // begin: a field
-    array(
-      'id'      => 'text_1',
-      'type'    => 'text',
-      'title'   => 'Text',
-    ),
-    // end: a field
-
-    array(
-      'id'      => 'textarea_1',
-      'type'    => 'textarea',
-      'title'   => 'Textarea',
-      'help'    => 'This option field is useful. You will love it!',
-    ),
-
-    array(
-      'id'      => 'upload_1',
-      'type'    => 'upload',
-      'title'   => 'Upload',
-      'help'    => 'Upload a site logo for your branding.',
-    ),
-
-    array(
-      'id'      => 'switcher_1',
-      'type'    => 'switcher',
-      'title'   => 'Switcher',
-      'label'   => 'You want to update for this framework ?',
-    ),
-
-    array(
-      'id'      => 'color_picker_1',
-      'type'    => 'color_picker',
-      'title'   => 'Color Picker',
-      'default' => '#3498db',
-    ),
-
-    array(
-      'id'      => 'checkbox_1',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox',
-      'label'   => 'Did you like this framework ?',
-    ),
-
-    array(
-      'id'      => 'radio_1',
-      'type'    => 'radio',
-      'title'   => 'Radio',
-      'options' => array(
-        'yes'   => 'Yes, Please.',
-        'no'    => 'No, Thank you.',
-      ),
-      'help'    => 'Are you sure for this choice?',
-    ),
-
-    array(
-      'id'             => 'select_1',
-      'type'           => 'select',
-      'title'          => 'Select',
-      'options'        => array(
-        'bmw'          => 'BMW',
-        'mercedes'     => 'Mercedes',
-        'volkswagen'   => 'Volkswagen',
-        'other'        => 'Other',
-      ),
-      'default_option' => 'Select your favorite car',
-    ),
-
-    array(
-      'id'      => 'number_1',
-      'type'    => 'number',
-      'title'   => 'Number',
-      'default' => '10',
-      'after'   => ' <i class="cs-text-muted">$ (dollars)</i>',
-    ),
-
-    array(
-      'id'        => 'image_select_1',
-      'type'      => 'image_select',
-      'title'     => 'Image Select',
-      'options'   => array(
-        'value-1' => 'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif',
-        'value-2' => 'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif',
-        'value-3' => 'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif',
-        'value-4' => 'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif',
-        'value-5' => 'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif',
-      ),
-    ),
-
-    array(
-      'type'    => 'notice',
-      'class'   => 'info',
-      'content' => 'This is info notice field for your highlight sentence.',
-    ),
-
-    array(
-      'id'      => 'background_1',
-      'type'    => 'background',
-      'title'   => 'Background',
-    ),
-
-    array(
-      'type'    => 'notice',
-      'class'   => 'warning',
-      'content' => 'This is info warning field for your highlight sentence.',
-    ),
-
-    array(
-      'id'      => 'icon_1',
-      'type'    => 'icon',
-      'title'   => 'Icon',
-      'desc'    => 'Some description here for this option field.',
-    ),
-
-    array(
-      'id'      => 'text_2',
-      'type'    => 'text',
-      'title'   => 'Text',
-      'desc'    => 'Some description here for this option field.',
-    ),
-
-    array(
-      'id'        => 'textarea_2',
-      'type'      => 'textarea',
-      'title'     => 'Textarea',
-      'info'      => 'Some information here for this option field.',
-      'shortcode' => true,
-    ),
-
+	  array(
+	  	'id'         => 'f-login',
+		'type'       => 'select',
+		'title'      => __( 'Login Page', 'wedding' ),
+		'options'    => cs_get_pages(),
+		'class'      => 'chosen'
+	  ),
+	  array(
+	  	'id'         => 'f-register',
+		'type'       => 'select',
+		'title'      => __( 'Register Page', 'wedding' ),
+		'options'    => cs_get_pages(),
+		'class'      => 'chosen'
+	  ),
+	  array(
+	  	'id'         => 'f-dashboard',
+		'type'       => 'select',
+		'title'      => __( 'Dashboard Page', 'wedding' ),
+		'options'    => cs_get_pages(),
+		'class'      => 'chosen'
+	  ),
+	  array(
+	  	'id'         => 'f-extend',
+		'type'       => 'select',
+		'title'      => __( 'Extend Page', 'wedding' ),
+		'options'    => cs_get_pages(),
+		'class'      => 'chosen'
+	  ),
   ), // end: fields
 );
 
